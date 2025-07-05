@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://bubkafp24kbyc"]
+
+[ext_resource type="Script" uid="uid://ca3t7dxkcbnpx" path="res://Background/L_R_Fall.gd" id="1_iiy6h"]
+[ext_resource type="Script" uid="uid://02bxi4pnvjiv" path="res://Background/U_D_Fall.gd" id="3_2t0lo"]
+[ext_resource type="PackedScene" uid="uid://bi0pfwefofg5v" path="res://Ball/Ball.tscn" id="3_tvlqp"]
+[ext_resource type="Script" uid="uid://cydieiheexq7q" path="res://Background/player_1_score.gd" id="4_2t0lo"]
+[ext_resource type="Script" uid="uid://cd42sklq3goto" path="res://Background/player_2_score.gd" id="5_hxy3p"]
+[ext_resource type="PackedScene" uid="uid://dmvmsf06qefew" path="res://Player/Player_1.tscn" id="6_jdn6q"]
+[ext_resource type="PackedScene" uid="uid://o2quvwnj015r" path="res://Player/player_2.tscn" id="7_mb1nm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afcvd"]
+size = Vector2(20, 665)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvlqp"]
+size = Vector2(1191, 20)
+
+[node name="Background" type="Node"]
+
+[node name="Write_Background" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 1, 1, 0.992157)
+
+[node name="Septal_Line" type="ColorRect" parent="."]
+offset_left = 576.0
+offset_right = 581.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Left_Fall" type="Area2D" parent="."]
+script = ExtResource("1_iiy6h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left_Fall"]
+position = Vector2(-12, 326)
+shape = SubResource("RectangleShape2D_afcvd")
+
+[node name="Right_Fall" type="Area2D" parent="."]
+script = ExtResource("1_iiy6h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right_Fall"]
+position = Vector2(1162, 323)
+shape = SubResource("RectangleShape2D_afcvd")
+
+[node name="Ball" parent="." instance=ExtResource("3_tvlqp")]
+position = Vector2(576, 324)
+
+[node name="Up_Fall" type="Area2D" parent="."]
+script = ExtResource("3_2t0lo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Up_Fall"]
+position = Vector2(575, -10)
+shape = SubResource("RectangleShape2D_tvlqp")
+
+[node name="Down_Fall2" type="Area2D" parent="."]
+script = ExtResource("3_2t0lo")
+y = -5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Down_Fall2"]
+position = Vector2(580, 658)
+shape = SubResource("RectangleShape2D_tvlqp")
+
+[node name="Player_1_score" type="Label" parent="."]
+offset_left = 105.0
+offset_top = 42.0
+offset_right = 145.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+script = ExtResource("4_2t0lo")
+
+[node name="Player_2_score" type="Label" parent="."]
+offset_left = 945.0
+offset_top = 56.0
+offset_right = 985.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+script = ExtResource("5_hxy3p")
+
+[node name="Player_1" parent="." instance=ExtResource("6_jdn6q")]
+position = Vector2(11, 328)
+
+[node name="Player_2" parent="." instance=ExtResource("7_mb1nm")]
+position = Vector2(1141, 324)

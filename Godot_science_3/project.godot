@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="新建游戏项目"
-run/main_scene="uid://bi0pfwefofg5v"
+config/name="PingPong"
+run/main_scene="uid://bubkafp24kbyc"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Value/icon.svg"
 

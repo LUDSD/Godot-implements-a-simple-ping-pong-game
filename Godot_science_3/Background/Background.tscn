@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bubkafp24kbyc"]
 
-[ext_resource type="Script" uid="uid://ca3t7dxkcbnpx" path="res://Background/L_R_Fall.gd" id="1_iiy6h"]
-[ext_resource type="Script" uid="uid://02bxi4pnvjiv" path="res://Background/U_D_Fall.gd" id="3_2t0lo"]
+[ext_resource type="Script" uid="uid://ca3t7dxkcbnpx" path="res://Background/L_R_Wall.gd" id="1_iiy6h"]
+[ext_resource type="Script" uid="uid://02bxi4pnvjiv" path="res://Background/U_D_Wall.gd" id="3_2t0lo"]
 [ext_resource type="PackedScene" uid="uid://bi0pfwefofg5v" path="res://Ball/Ball.tscn" id="3_tvlqp"]
 [ext_resource type="Script" uid="uid://cydieiheexq7q" path="res://Background/player_1_score.gd" id="4_2t0lo"]
 [ext_resource type="Script" uid="uid://cd42sklq3goto" path="res://Background/player_2_score.gd" id="5_hxy3p"]
@@ -27,35 +27,35 @@ offset_right = 581.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
 
-[node name="Left_Fall" type="Area2D" parent="."]
+[node name="Left_Wall" type="Area2D" parent="."]
 script = ExtResource("1_iiy6h")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Left_Fall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left_Wall"]
 position = Vector2(-12, 326)
 shape = SubResource("RectangleShape2D_afcvd")
 
-[node name="Right_Fall" type="Area2D" parent="."]
+[node name="Right_Wall" type="Area2D" parent="."]
 script = ExtResource("1_iiy6h")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Right_Fall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right_Wall"]
 position = Vector2(1162, 323)
 shape = SubResource("RectangleShape2D_afcvd")
 
 [node name="Ball" parent="." instance=ExtResource("3_tvlqp")]
 position = Vector2(576, 324)
 
-[node name="Up_Fall" type="Area2D" parent="."]
+[node name="Up_Wall" type="Area2D" parent="."]
 script = ExtResource("3_2t0lo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Up_Fall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Up_Wall"]
 position = Vector2(575, -10)
 shape = SubResource("RectangleShape2D_tvlqp")
 
-[node name="Down_Fall2" type="Area2D" parent="."]
+[node name="Down_Wall2" type="Area2D" parent="."]
 script = ExtResource("3_2t0lo")
 y = -5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Down_Fall2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Down_Wall2"]
 position = Vector2(580, 658)
 shape = SubResource("RectangleShape2D_tvlqp")
 
